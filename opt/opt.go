@@ -2,30 +2,35 @@ package opt
 
 // Boolean flag types with constants
 type LongFormatFlag bool
+
 const (
-	LongFormat   LongFormatFlag = true
-	ShortFormat  LongFormatFlag = false
+	LongFormat  LongFormatFlag = true
+	ShortFormat LongFormatFlag = false
 )
 
 type AllFilesFlag bool
+
 const (
 	AllFiles   AllFilesFlag = true
 	NoAllFiles AllFilesFlag = false
 )
 
 type HumanReadableFlag bool
+
 const (
 	HumanReadable   HumanReadableFlag = true
 	NoHumanReadable HumanReadableFlag = false
 )
 
 type RecursiveFlag bool
+
 const (
 	Recursive   RecursiveFlag = true
 	NoRecursive RecursiveFlag = false
 )
 
 type ReverseFlag bool
+
 const (
 	Reverse   ReverseFlag = true
 	NoReverse ReverseFlag = false
@@ -51,9 +56,9 @@ type Flags struct {
 }
 
 // Configure methods for the opt system
-func (f LongFormatFlag) Configure(flags *Flags) { flags.LongFormat = f }
-func (f AllFilesFlag) Configure(flags *Flags) { flags.AllFiles = f }
+func (f LongFormatFlag) Configure(flags *Flags)    { flags.LongFormat = f }
+func (f AllFilesFlag) Configure(flags *Flags)      { flags.AllFiles = f }
 func (f HumanReadableFlag) Configure(flags *Flags) { flags.HumanReadable = f }
-func (f RecursiveFlag) Configure(flags *Flags) { flags.Recursive = f }
-func (f ReverseFlag) Configure(flags *Flags) { flags.Reverse = f }
-func (s SortBy) Configure(flags *Flags) { flags.SortBy = s }
+func (f RecursiveFlag) Configure(flags *Flags)     { flags.Recursive = f }
+func (f ReverseFlag) Configure(flags *Flags)       { flags.Reverse = f }
+func (s SortBy) Configure(flags *Flags)            { flags.SortBy = s }
